@@ -23,14 +23,10 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
 
   @override
   void initState() {
+    super.initState();
     recipeDetailsResponse = fetchRecipesDetails(widget.recipeId);
     log('recipeId -> ${widget.recipeId}');
     log('response -> $recipeDetailsResponse');
-  }
-
-  @override
-  void deactivate() {
-    recipeDetailsResponse = null;
   }
 
   @override
@@ -104,6 +100,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                       child: ListView.builder(
                         scrollDirection: Axis.vertical,
                         shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
                         itemCount: snapShot.data?.recipe?.ingredients?.length,
                         itemBuilder: (context, index) {
                           return Text(

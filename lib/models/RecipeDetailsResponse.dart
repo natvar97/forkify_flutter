@@ -39,7 +39,7 @@ class Recipe {
       String? sourceUrl, 
       String? recipeId, 
       String? imageUrl, 
-      int? socialRank, 
+      dynamic? socialRank,
       String? publisherUrl, 
       String? title,}){
     _publisher = publisher;
@@ -67,7 +67,7 @@ class Recipe {
   String? _sourceUrl;
   String? _recipeId;
   String? _imageUrl;
-  int? _socialRank;
+  dynamic? _socialRank;
   String? _publisherUrl;
   String? _title;
 
